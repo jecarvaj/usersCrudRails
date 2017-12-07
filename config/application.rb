@@ -7,6 +7,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module UsersCrud
+  SOCIAL_NETS=['Youtube', 'Twitter', 'Instagram', 'Linkedin', 'Tumblr', 'Facebook']
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
@@ -16,3 +17,5 @@ module UsersCrud
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+

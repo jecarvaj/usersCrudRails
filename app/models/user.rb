@@ -1,5 +1,9 @@
 class User < ApplicationRecord
   has_secure_password
+
+  has_many :profiles, inverse_of: :user
+  accepts_nested_attributes_for :profiles, reject_if: :all_blank, allow_destroy: true
+
   before_save :capitalize_names
   validates :rut, :first_name, :last_name, :mail, presence: true
   validate :valid_date
