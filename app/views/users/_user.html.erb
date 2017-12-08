@@ -1,14 +1,40 @@
 
-  <tr>
-    <td><%= image_tag user.image.url(:thumb)%></td>
-    <td>
-      <%=user.first_name+" "+user.last_name%><br><%=user.rut%>
-    </td>
-    <td><%= user.mail %></td>
-    <td><%= user.birthday %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<tr>
+  <td style="width: 150px"><%= image_tag user.image.url(:thumb), size:'120', class: 'img-thumbnail'%></td>
+
+  <td><table class="table borderless">
+    <tr><td><%=user.first_name+" "+user.last_name%><br><%=user.rut%></td>
+    <td><%=user.mail%></td>
+    <td><%=user.birthday%></td>
+      </tr>
+    <tr><td colspan="3">
+      <div class="row align-bottom">
+      <% user.profiles.each do |profile|%>
+
+        <div class="col-lg-1">
+          <%=image_tag 'social_nets/'+profile.name.downcase, size:'36'%>
+        </div>
+
+      <%end%>
+      </div>
+        </td></tr>
+  </table>
+  </td>
+  <td>
+    <div class="btn-group-vertical" style="align-content: center">
+
+      <%= link_to user do %>
+        <i class="fa fa-eye fa-2x text-primary" aria-hidden="true"></i>
+      <% end %>
+      <%= link_to edit_user_path(user.id) do %>
+        <i class="fa fa-pencil-square-o fa-2x text-success" aria-hidden="true"></i>
+      <% end %>
+      <%= link_to user, :method => :delete,data: { confirm: 'Are you sure?' } do %>
+        <i class="fa fa-trash-o fa-2x text-danger" aria-hidden="true"></i>
+      <% end %>
+    </div>
+  </td>
+
+</tr>
 
 

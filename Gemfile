@@ -43,7 +43,7 @@ gem 'cocoon'
 ##TRATANDO OTRA VEZ
 gem 'rails-jquery-autocomplete'
 gem 'jquery-ui-rails'
-
+gem 'font-awesome-rails'
 # #####
 
 # Use Capistrano for deployment
