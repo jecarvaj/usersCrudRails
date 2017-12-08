@@ -22,4 +22,8 @@ class User < ApplicationRecord
   def valid_date
     errors.add(:birthday, "Nacimiento futuro?") unless birthday <= Date.today
   end
+
+  def funky_method
+    "#{self.first_name+' '+ self.last_name+'--'+self.mail}"
+  end
 end

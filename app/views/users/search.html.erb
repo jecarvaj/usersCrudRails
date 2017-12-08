@@ -1,0 +1,22 @@
+
+  <%=form_for @user,:html=>{:id=>'search-form'} do |f| %>
+    <div class="col-md-6" style="margin: auto;margin-top: 20px;">
+    <div class="form-group" >
+      <%=f.label :rut %>
+      <%=f.autocomplete_field :rut, autocomplete_user_rut_users_path,
+                              :update_elements => { :mail=>'#mail_field', :last_name=>'#last_name_field',:rut => '#rut_field'},
+                              id:'rut_field', class:'form-control search-query ui-autocomplete-input'%>
+    </div>
+    <div class="form-group">
+      <%=f.label :last_name %>
+      <%=f.autocomplete_field :last_name, autocomplete_user_last_name_users_path,
+                              :update_elements => { :mail=>'#mail_field', :last_name=>'#last_name_field',:rut => '#rut_field'},
+                              id:'last_name_field', class:'form-control'%>
+    </div>
+    <div class="form-group">
+      <%=f.label :mail %>
+      <%=f.text_field :mail, id:'mail_field', class:'form-control'%>
+    </div>
+
+  <%end%>
+</div>

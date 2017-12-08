@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  ##SORRY POR REPEAT :/    DRY
+  autocomplete :user, :rut, :extra_data => [:rut,:first_name, :last_name, :mail], :display_value => :funky_method
+  autocomplete :user, :last_name, :extra_data=> [:rut,:first_name, :last_name, :mail],:display_value =>:funky_method, :full=>true
   # GET /users
   # GET /users.json
   def index
@@ -58,6 +60,10 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'Usuario eliminado.' }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    @user=User.new
   end
 
   private

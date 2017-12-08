@@ -39,6 +39,13 @@ gem 'jquery-rails'
 gem 'paperclip'
 
 gem 'cocoon'
+
+##TRATANDO OTRA VEZ
+gem 'rails-jquery-autocomplete'
+gem 'jquery-ui-rails'
+
+# #####
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
