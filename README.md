@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+App hecha en Ruby on Rails 5.
+Permite:
 
-Things you may want to cover:
+- *Listar usuarios*
 
-* Ruby version
+- *Ver usuario*
 
-* System dependencies
+- *Editar usuario*
 
-* Configuration
+- *Eliminar usuario*
 
-* Database creation
+- *Relacionar redes sociales a usuario*
 
-* Database initialization
+- *Formulario de búsqueda autocompletable*
 
-* How to run the test suite
+# [DEMO ONLINE](https://floating-wave-24569.herokuapp.com/)
+### En la demo online no funcionan los assets, por lo que no se verán los iconos de redes sociales, en local sí
+### Subido a Heroku utilizando PostgreSQl. Versión de github y local con SQLite 
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
