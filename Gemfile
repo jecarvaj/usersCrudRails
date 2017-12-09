@@ -45,7 +45,7 @@ gem 'cocoon'
 gem 'rails-jquery-autocomplete'
 gem 'jquery-ui-rails'
 gem 'font-awesome-rails'
-
+gem 'faker'
 #gem 'rails-ujs'
 # #####
 
