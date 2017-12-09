@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
   <head>
+
     <title>UsersCrud</title>
     <%= csrf_meta_tags %>
 
@@ -8,8 +10,22 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <%=link_to  'Prueba',users_path, {:class =>'navbar-brand' }%>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <%=link_to  'Agregar usuario',new_user_path, {:class =>'nav-item nav-link' }%>
+        <%=link_to  'Parte2',search_path, {:class =>'nav-item nav-link' }%>
+
+      </div>
+    </div>
+  </nav>
   <body>
-    <div class="container">
+    <div class="container" style="padding-top: 70px">
       <%= yield %>
     </div>
   </body>

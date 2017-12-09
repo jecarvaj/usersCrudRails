@@ -26,4 +26,7 @@ class User < ApplicationRecord
   def funky_method
     "#{self.first_name+' '+ self.last_name+'--'+self.mail}"
   end
+  def image_url
+    image.url(:medium)
+  end
 end

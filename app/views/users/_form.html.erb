@@ -12,7 +12,7 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <%= f.label :rut %>
-      <%= f.text_field :rut, id: :user_rut, class:'form-control' %>
+      <%= f.text_field :rut, id: :user_rut, class:'form-control', :oninput=>'checkRut(user_rut)' %>
     </div>
 
 
@@ -69,5 +69,3 @@
 
 
 <% end %>
-
-

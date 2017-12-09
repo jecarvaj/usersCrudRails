@@ -9,7 +9,36 @@
   </tbody>
 
 </table>
-
+<%=render 'modal'%>
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<script type="application/javascript">
+    console.log("ALO?")
+    $('#modal_profile').modal({
+        keyboard: true,
+        backdrop: "static",
+        show:false,
+
+    }).on('show.bs.modal', function(){ //subscribe to show method
+        console.log("weaaa?")
+        var getId = $(event.target).closest('i').data('id') //get the id from tr
+        $.ajax({
+            url: 'users/'+getId+".json",
+            type: 'GET',
+            dataType: 'JSON',
+            success: function(json) {
+                console.log(json);
+                $('#modal-head-name').text(json.first_name+" "+json.last_name)
+                $('#modal-image').attr('src', json.image_url)
+                $('#modal-birthday').text(json.birthday)
+                $('#modal-mail').text(json.mail)
+                $('#modal-rut').text(json.rut)
+                var $profiles_row=$('#row-profiles-'+json.id).clone()
+                $('#modal-profiles').html($profiles_row).children().children().attr('class', 'col')
+
+            }
+        });
+
+    });
+
+</script>

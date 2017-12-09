@@ -9,9 +9,7 @@
     <div class="col-md-6">
     <%=f.label :url%>
     <div class="input-group">
-      <span class="input-group-addon" id="btnGroupAddon"></span>
       <%=f.text_field :url, class:'form-control', id:'input_url'%>
-      <span style="display: none" class="input-group-addon" id="addonTumblr"></span>
     </div>
     </div>
 
@@ -25,29 +23,17 @@
 
 <script type="application/javascript">
   var hashmap={}
-  var cont=0
 <%UsersCrud::SOCIAL_NETS.each do |net|%>
   hashmap['<%=net[:name_net]%>']='<%=net[:url]%>'
   <%end%>
-  console.log(hashmap)
-console.log(hashmap['Youtube'])
-
 
   $('#input_social').change(function () {
-
       social=$('#input_social').val()
       url_net=hashmap[social]
-      if(social.toLowerCase()==="tumblr"){
-          $('#addonTumblr').text(url_net).attr('id', 'addonTumblr_'+cont).show()
-          $('#btnGroupAddon').text('https://').attr('id', 'btnGroupAddon_'+cont)
+      console.log(url_net)
+      $('#input_url').val(url_net).focus().attr('id', 'input_url_old')
+      $(this).attr('id', 'input_social_old')//.attr('disabled', 'disabled')
 
-      }else{
-
-          $('#addonTumblr').hide().attr('id', 'addonTumblr_'+cont)
-          $('#btnGroupAddon').text(url_net).attr('id', 'btnGroupAddo_'+cont)
-      }
-      $(this).attr('id', 'input_field_'+cont)
-      cont++
   })
 
 </script>

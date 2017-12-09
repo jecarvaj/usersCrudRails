@@ -11,7 +11,7 @@ module UsersCrud
                {:name_net=>'Twitter', :url=>'https://www.twitter.com/' },
                {:name_net=>'Instagram', :url=>'https://www.instagram.com/'},
                {:name_net=>'Linkedin', :url=>'https://www.linkedin.com/in/'},
-               {:name_net=>'Tumblr', :url=>'.tumblr.com/'},
+             #  {:name_net=>'Tumblr', :url=>'.tumblr.com/'},
                {:name_net=>'Facebook', :url=>'https://www.facebook.com/'}]
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
