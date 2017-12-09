@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  ##SORRY POR REPEAT :/    DRY
+  ##SORRY POR REPEAT :/
   autocomplete :user, :rut, :extra_data => [:rut,:first_name, :last_name, :mail], :display_value => :funky_method
   autocomplete :user, :last_name, :extra_data=> [:rut,:first_name, :last_name, :mail],:display_value =>:funky_method, :full=>true
   # GET /users
@@ -65,6 +65,7 @@ class UsersController < ApplicationController
   def search
     @user=User.new
   end
+
 
   private
   # Use callbacks to share common setup or constraints between actions.

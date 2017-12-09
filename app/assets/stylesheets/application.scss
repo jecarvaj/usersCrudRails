@@ -16,6 +16,8 @@
 @import "bootstrap";
 
 .borderless td, .borderless th {
+  table-layout: fixed;
+  width: 30%;
   border: none;
   padding: 0.5em;
 }
