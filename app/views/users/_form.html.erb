@@ -1,3 +1,22 @@
+<% if @user.errors.any? %>
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Ups!</strong>
+
+    <% @user.errors.full_messages.each do |msg| %>
+
+        <ul>
+          <%=msg%>
+        </ul>
+
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+    <% end %>
+    </div>
+
+<% end %>
 <%= form_with(model: user, local: true, multipart:true) do |f| %>
   <div class="form-row">
     <div class="form-group col-md-6">

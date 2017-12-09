@@ -45,7 +45,7 @@ gem 'rails-jquery-autocomplete'
 gem 'jquery-ui-rails'
 gem 'font-awesome-rails'
 
-gem 'rails-ujs'
+#gem 'rails-ujs'
 # #####
 
 # Use Capistrano for deployment
