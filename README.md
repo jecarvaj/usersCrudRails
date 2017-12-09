@@ -18,4 +18,5 @@ Permite:
 # [DEMO ONLINE](https://floating-wave-24569.herokuapp.com/)
 ### En la demo online no funcionan los assets, por lo que no se verán los iconos de redes sociales, en local sí
 ### Subido a Heroku utilizando PostgreSQl. Versión de github y local con SQLite 
-
+ 
+![alt text](https://github.com/jecarvaj/usersCrudRails/blob/master/Captura.PNG "Logo Title Text 1")
