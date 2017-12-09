@@ -4,12 +4,6 @@
     <list default="true" id="13060655-cba1-492d-ab5f-deb6920ecb66" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/views/users/_user.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_user.html.erb" />
-      <change beforePath="$PROJECT_DIR$/public/assets/social_nets/facebook-92a7757d484b4ae30862641fb9c6c7560e01c3c0c49578fc42764a9a21d29058.png" afterPath="$PROJECT_DIR$/public/assets/social_nets/facebook.png" />
-      <change beforePath="$PROJECT_DIR$/public/assets/social_nets/instagram-a56a4d49a386d7ee4879ecbfdd490086d02e05d48baca17eacf5b1dd7707e2b4.png" afterPath="$PROJECT_DIR$/public/assets/social_nets/instagram.png" />
-      <change beforePath="$PROJECT_DIR$/public/assets/social_nets/linkedin-ddcf33d54a0853687ad857e867df181900a451d07e1f856ab0284916fa2a6688.png" afterPath="$PROJECT_DIR$/public/assets/social_nets/linkedin.png" />
-      <change beforePath="$PROJECT_DIR$/public/assets/social_nets/tumblr-aa754c9d500f604ecde567de3a70ac7554f3106c7d5df378d9b60215d52b08da.png" afterPath="$PROJECT_DIR$/public/assets/social_nets/tumblr.png" />
-      <change beforePath="$PROJECT_DIR$/public/assets/social_nets/twitter-d17ee7a2ac9394abbc59c904e0675de7e91ae9b0a3121a4b6f143d1d1d2b350f.png" afterPath="$PROJECT_DIR$/public/assets/social_nets/twitter.png" />
-      <change beforePath="$PROJECT_DIR$/public/assets/social_nets/youtube-5fea0da3f981dfcc17202d54aac6b7ee56a5709bcf0323dc65d4795b6a12c499.png" afterPath="$PROJECT_DIR$/public/assets/social_nets/youtube.png" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -30,7 +24,7 @@
         <entry file="file://$PROJECT_DIR$/app/views/users/_user.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="25" column="126" lean-forward="true" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="126" />
+              <caret line="25" column="76" lean-forward="false" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -438,7 +432,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122063000" />
+    <option name="totallyTimeSpent" value="122294000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -821,7 +815,7 @@
     <entry file="file://$PROJECT_DIR$/app/views/users/_user.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="25" column="126" lean-forward="true" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="126" />
+          <caret line="25" column="76" lean-forward="false" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
           <folding />
         </state>
       </provider>
