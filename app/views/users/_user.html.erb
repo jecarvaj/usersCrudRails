@@ -23,7 +23,7 @@
           <div id="row-profiles-<%= user.id %>" class="row">
             <% user.profiles.each do |profile| %>
               <div class="col-lg-1">
-                <a target="_blank" href="<%= profile.url %>"><%=profile.name%></a>
+                <a target="_blank" href="<%= profile.url %>"> <%= image_tag 'social_nets/' + profile.name.downcase, size: '36' %></a>
               </div>
             <% end %>
           </div>
