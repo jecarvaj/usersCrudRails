@@ -1,1 +1,47 @@
 <h1>Usuarios</h1>
+<%if notice%>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <p id="notice"><%=notice%></p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<%end%>
+
+<table class="table">
+  <tbody>
+    <%= render @users %>
+  </tbody>
+</table>
+
+
+<%=render 'modal'%>
+
+
+<script type="application/javascript">
+    $('#modal_profile').modal({
+        keyboard: true,
+        backdrop: "static",
+        show:false,
+    }).on('show.bs.modal', function(){
+        //Cuando click en el ojo obtengo la id del usuario consultado
+        //Y hago una peticion por AJAX para obtener sus datos
+        //Luego renderizo los datos en el modal
+        var get_id = $(event.target).closest('i').data('id')
+        $.ajax({
+            url: 'users/'+get_id+".json",
+            type: 'GET',
+            dataType: 'JSON',
+            success: function(json) {
+                $('#modal-head-name').text(json.first_name+" "+json.last_name)
+                $('#modal-image').attr('src', json.image_url)
+                $('#modal-birthday').text(json.birthday)
+                $('#modal-mail').text(json.mail)
+                $('#modal-rut').text(json.rut)
+                //Para ahorrar otra consulta clono los iconos de redes sociales y los agrego al modal
+                var profiles_by_user=$('#row-profiles-'+json.id).clone()
+                $('#modal-profiles').html(profiles_by_user).children().children().attr('class', 'col')
+            }
+        });
+    });
+</script>
