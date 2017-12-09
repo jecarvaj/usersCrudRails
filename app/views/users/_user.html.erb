@@ -22,7 +22,7 @@
         <td colspan="3">
           <div id="row-profiles-<%= user.id %>" class="row">
             <% user.profiles.each do |profile| %>
-              <div class="col-lg-1">
+              <div class="col-lg">
                 <a target="_blank" href="<%= profile.url %>"> <%= profile.name.downcase %></a>
               </div>
             <% end %>
