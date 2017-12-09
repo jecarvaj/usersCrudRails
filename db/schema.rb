@@ -21,24 +21,6 @@ ActiveRecord::Schema.define(version: 20171207042743) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
-  create_table "social_nets", force: :cascade do |t|
-    t.string "name"
-    t.string "url"
-    t.string "logo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_profiles", force: :cascade do |t|
-    t.string "username"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.integer "social_net_id"
-    t.index ["social_net_id"], name: "index_user_profiles_on_social_net_id"
-    t.index ["user_id"], name: "index_user_profiles_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "rut"
     t.string "first_name"
