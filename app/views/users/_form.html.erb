@@ -1,90 +1,82 @@
 <% if @user.errors.any? %>
-
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-      <strong>Ups!</strong>
-
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Ups!</strong>
     <% @user.errors.full_messages.each do |msg| %>
-
-        <ul>
-          <%=msg%>
-        </ul>
-
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-
+      <ul>
+        <%= msg %>
+      </ul>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     <% end %>
-    </div>
-
+  </div>
 <% end %>
+
 <%= form_with(model: user, local: true, multipart:true) do |f| %>
+
   <div class="form-row">
     <div class="form-group col-md-6">
-        <%= f.label :first_name %>
-      <%= f.text_field :first_name, id: :user_first_name,class:'form-control' %>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, id: :user_first_name, class: 'form-control' %>
     </div>
     <div class="form-group col-md-6">
-      <%= f.label :last_name%>
-      <%= f.text_field :last_name, id: :user_last_name,class:'form-control' %>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, id: :user_last_name, class: 'form-control' %>
     </div>
   </div>
+
   <div class="form-row">
     <div class="form-group col-md-6">
       <%= f.label :rut %>
-      <%= f.text_field :rut, id: :user_rut, class:'form-control', :oninput=>'checkRut(user_rut)' %>
+      <%= f.text_field :rut, id: :user_rut, class: 'form-control', :oninput => 'checkRut(user_rut)' %>
     </div>
-
-
     <div class="form-group col-md-6">
       <%= f.label :birthday %>
       <div class="form-control">
-      <%= f.date_select :birthday, :start_year => Date.current.year, :end_year => 1920 , id: :user_birthday %>
+        <%= f.date_select :birthday, :start_year => Date.current.year, :end_year => 1920, id: :user_birthday %>
       </div>
     </div>
   </div>
+
   <div class="form-row">
     <div class="form-group col-md-6">
-      <%=f.label :mail %>
-      <%= f.text_field :mail, id: :user_mail, class:'form-control' %>
+      <%= f.label :mail %>
+      <%= f.text_field :mail, id: :user_mail, class: 'form-control' %>
     </div>
-
     <div class="form-group col-md-6">
-      <%= f.label :image%><br>
-      <%= f.file_field :image%>
+      <%= f.label :image %><br>
+      <%= f.file_field :image %>
     </div>
   </div>
 
 
   <div class="form-group row">
-    <%= f.label :password , class:'col-sm-3 col-form-label'%>
+    <%= f.label :password, class: 'col-sm-3 col-form-label' %>
     <div class="col-sm-9">
-      <%= f.password_field :password, id: :user_password, class:'form-control' %>
+      <%= f.password_field :password, id: :user_password, class: 'form-control' %>
     </div>
   </div>
   <div class="form-group row">
-    <%= f.label :password_confirmation , class:'col-sm-3 col-form-label'%>
-  <div class="col-sm-9">
-    <%= f.password_field :password_confirmation, id: :user_password_confirmation, class:'form-control' %>
-  </div>
+    <%= f.label :password_confirmation, class: 'col-sm-3 col-form-label' %>
+    <div class="col-sm-9">
+      <%= f.password_field :password_confirmation, id: :user_password_confirmation, class: 'form-control' %>
+    </div>
   </div>
 
   <div id="profiles">
     <div class="profiles-fields">
-      <%=link_to_add_association 'Agregar red social', f, :profiles,
-                                 'data-association-insertion-mode'=>'.profiles-fields',
-                                 'data-association-insertion-method'=>'append', :class=>'col-xs-1 btn btn-sm btn-success',
-                                 partial: 'profile_fields'%>
-        <%= f.fields_for :profiles do |profile| %>
-        <%=render 'profile_fields', f: profile%>
-        </div>
-
-
-     <%end%>
-      <div class="actions" style="padding: 20px">
-        <%= f.submit 'Enviar', class:'btn btn-primary btn-lg' %>
-        <%= link_to 'Volver', users_path, class: 'btn btn-secondary btn-lg' %>
-      </div>
+      <%= link_to_add_association 'Agregar red social', f, :profiles,
+                                  'data-association-insertion-mode' => '.profiles-fields',
+                                  'data-association-insertion-method' => 'append', :class => 'col-xs-1 btn btn-sm btn-success',
+                                  partial: 'profile_fields' %>
+      <%= f.fields_for :profiles do |profile| %>
+        <%= render 'profile_fields', f: profile %>
+      <% end %>
+    </div>
   </div>
 
-
+  <div class="actions" style="padding: 20px">
+    <%= f.submit 'Enviar', class:'btn btn-primary btn-lg' %>
+    <%= link_to 'Volver', users_path, class: 'btn btn-secondary btn-lg' %>
+  </div>
 <% end %>

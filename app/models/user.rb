@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
-  has_attached_file :image, styles: { medium: '200x200', thumb: '100x100#' }, default_url:"http://www.fastpoke.com/wp-content/themes/wpjobus/images/User_default.png"
+  has_attached_file :image, styles: { medium: '200x200', thumb: '100x100#' }, default_url:'default.png'
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   #Relacion para un user tiene muchos profiles
@@ -24,7 +24,7 @@ class User < ApplicationRecord
   end
 
   def funky_method
-    "#{self.first_name+' '+ self.last_name+'--'+self.mail}"
+    "#{self.first_name+' '+ self.last_name+'. '+self.rut}"
   end
   def image_url
     image.url(:medium)

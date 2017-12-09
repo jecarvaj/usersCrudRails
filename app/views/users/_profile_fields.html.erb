@@ -3,7 +3,7 @@
   <div class="field form-row">
     <div class="form-group col-md-6">
       <%=f.label :name%>
-      <%=f.select( :name, UsersCrud::SOCIAL_NETS.collect{|x| x[:name_net]},{},{class:'form-control', id:'input_social'})%>
+      <%=f.select( :name, UsersCrud::SOCIAL_NETS.collect{|x| x[:name_net]},{  include_blank: true},{class:'form-control', id:'input_social'})%>
     </div>
 
     <div class="col-md-6">

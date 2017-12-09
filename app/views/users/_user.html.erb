@@ -1,43 +1,49 @@
-
-
-
-<tr >
-  <td style="width: 150px"><%= image_tag user.image.url(:thumb), size:'120', class: 'img-thumbnail'%></td>
-
-  <td><table class="table borderless">
-    <tr><td><h5><%=user.first_name+" "+user.last_name%><br><small class="text-muted"><%=user.mail%></small></h5></td>
-      <td ><%=user.rut%></td>
-    <td><%=user.birthday%></td>
-      </tr>
-    <tr><td colspan="3">
-      <div id="row-profiles-<%=user.id%>" class="row">
-      <% user.profiles.each do |profile|%>
-
-        <div class="col-lg-1">
-          <a target="_blank" href="<%=profile.url%>"> <%=image_tag 'social_nets/'+profile.name.downcase, size:'36'%></a>
-        </div>
-
-      <%end%>
-      </div>
-        </td></tr>
-  </table>
+<tr>
+  <td style="width: 150px">
+    <%= image_tag user.image.url(:thumb), size: '120', class: 'img-thumbnail' %>
   </td>
+
+  <td>
+    <table class="table borderless">
+      <tr>
+        <td>
+          <h5><%= user.first_name + " " + user.last_name %><br>
+            <small class="text-muted"><%= user.mail %></small>
+          </h5>
+        </td>
+        <td>
+          <%= user.rut %>
+        </td>
+        <td>
+          <%= user.birthday %>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <div id="row-profiles-<%= user.id %>" class="row">
+            <% user.profiles.each do |profile| %>
+              <div class="col-lg-1">
+                <a target="_blank" href="<%= profile.url %>"> <%= image_tag 'social_nets/' + profile.name.downcase, size: '36' %></a>
+              </div>
+            <% end %>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </td>
+
   <td>
     <div class="btn-group-vertical" style="align-content: center">
 
-
-
-         <i data-toggle="modal" data-id='<%=user.id%>' data-target="#modal_profile"
-             class="fa fa-eye fa-2x text-info btn-link" style="cursor: pointer" aria-hidden="true"></i>
-
+      <i data-toggle="modal" data-id='<%= user.id %>' data-target="#modal_profile" class="fa fa-eye fa-2x text-info btn-link" style="cursor: pointer" aria-hidden="true"></i>
 
       <%= link_to edit_user_path(user.id) do %>
         <i class="fa fa-pencil-square-o fa-2x text-success btn-link" aria-hidden="true"></i>
       <% end %>
-      <%= link_to user, :method => :delete,data: { confirm: 'Are you sure?' } do %>
+
+      <%= link_to user, :method => :delete, data: {confirm: 'Are you sure?'} do %>
         <i class="fa fa-trash-o fa-2x text-danger btn-link" aria-hidden="true"></i>
       <% end %>
-
     </div>
   </td>
 </tr>
